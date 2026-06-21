@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简明指南 · V体育 信息卡片</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f2f4f6;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #1f2a3f;
+            line-height: 1.6;
+            padding: 2rem 1.5rem 3rem;
+        }
+
+        .page-wrap {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* header / hero */
+        .hero {
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.02);
+            padding: 2.8rem 2.5rem;
+            margin-bottom: 2.2rem;
+            border: 1px solid #e8edf2;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 550;
+            letter-spacing: -0.02em;
+            color: #0b1a2b;
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #4b5b6f;
+            margin-top: 1rem;
+            max-width: 640px;
+            margin-left: auto;
+            margin-right: auto;
+            background: #f7f9fb;
+            padding: 0.6rem 1.2rem;
+            border-radius: 80px;
+            display: inline-block;
+            border: 1px solid #dfe5ec;
+            font-weight: 450;
+        }
+
+        .hero p {
+            margin-top: 1.3rem;
+            color: #2f3f55;
+            font-size: 1rem;
+        }
+
+        /* 卡片网格 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+            margin: 2.4rem 0 2.2rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.8rem 1.7rem 2rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            font-weight: 550;
+            color: #13283f;
+            border-left: 4px solid #5f7a9a;
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .card p, .card li {
+            font-size: 0.95rem;
+            color: #2b3b51;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 0.4rem;
+        }
+
+        .card li {
+            padding: 0.3rem 0 0.3rem 1.4rem;
+            position: relative;
+        }
+
+        .card li::before {
+            content: "·";
+            position: absolute;
+            left: 0.2rem;
+            color: #5d7b9e;
+            font-weight: 700;
+        }
+
+        .tag-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1.2rem 0 0.2rem;
+        }
+
+        .tag {
+            background: #eef2f7;
+            border-radius: 40px;
+            padding: 0.25rem 1rem;
+            font-size: 0.8rem;
+            color: #1d334b;
+            border: 1px solid #d4dde8;
+        }
+
+        /* 融合段落（自然链接） */
+        .context-block {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2rem 2.2rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.02);
+            margin: 1.8rem 0 2.4rem;
+        }
+
+        .context-block p {
+            margin-top: 0.8rem;
+            font-size: 0.98rem;
+            color: #1f3048;
+        }
+
+        .context-block p:first-child {
+            margin-top: 0;
+        }
+
+        .anchor-sentence {
+            background: #f6f9fd;
+            padding: 0.6rem 1.4rem;
+            border-radius: 60px;
+            display: inline-block;
+            border: 1px solid #dce5ef;
+            font-size: 0.95rem;
+            margin-top: 0.6rem;
+        }
+
+        .anchor-sentence a {
+            color: #1a4e7f;
+            font-weight: 550;
+            text-decoration: none;
+            border-bottom: 1px solid #b3c9e2;
+            transition: border-color 0.2s;
+        }
+
+        .anchor-sentence a:hover {
+            border-bottom-color: #1a4e7f;
+        }
+
+        /* FAQ 摘要卡片 */
+        .faq-mini {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.8rem 2rem 2rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        .faq-mini h3 {
+            font-size: 1.2rem;
+            font-weight: 550;
+            color: #13283f;
+            margin-bottom: 1.2rem;
+            border-left: 4px solid #7d96b2;
+            padding-left: 1rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.1rem;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 550;
+            color: #1f3b57;
+            margin-bottom: 0.15rem;
+        }
+
+        .faq-item p {
+            font-size: 0.92rem;
+            color: #33445c;
+            margin-left: 0.2rem;
+        }
+
+        .faq-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .reminder-note {
+            background: #f0f4fa;
+            border-radius: 60px;
+            padding: 0.4rem 1.2rem;
+            display: inline-block;
+            font-size: 0.85rem;
+            border: 1px solid #d2dceb;
+            color: #1b3a59;
+            margin-top: 0.2rem;
+        }
+
+        /* 响应式微调 */
+        @media (max-width: 600px) {
+            body {
+                padding: 1.2rem 1rem 2.5rem;
+            }
+            .hero {
+                padding: 2rem 1.3rem;
+            }
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+            .card-grid {
+                gap: 1.2rem;
+            }
+            .context-block {
+                padding: 1.4rem 1.2rem;
+            }
+            .anchor-sentence {
+                font-size: 0.9rem;
+                padding: 0.4rem 1rem;
+            }
+            .faq-mini {
+                padding: 1.4rem 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    <!-- 主视觉 hero -->
+    <header class="hero">
+        <h1>V体育 · 简明指南</h1>
+        <div class="sub">信息卡片 · 使用方向与提醒</div>
+        <p>一份从查阅方式、适用场景到访问前提的梳理，帮助你更顺畅地了解 V体育 所提供的内容与结构。</p>
+    </header>
+
+    <!-- 用途卡片区 -->
+    <div class="card-grid">
+        <div class="card">
+            <h3>📘 主要用途</h3>
+            <p>V体育 聚合了体育资讯、赛事数据以及相关内容的索引。页面布局以信息获取效率为优先，适合日常快速查阅比分、赛程和背景资料。</p>
+            <div class="tag-group">
+                <span class="tag">赛事数据</span>
+                <span class="tag">资讯浏览</span>
+                <span class="tag">资料索引</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>🧑 适合人群</h3>
+            <ul>
+                <li>关注体育动态、希望集中浏览多项赛事信息的爱好者</li>
+                <li>需要查阅赛程、历史数据或队伍资料的轻度研究者</li>
+                <li>对体育类网站结构有简明需求的新用户</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>⚙️ 访问贴士</h3>
+            <p>建议使用最新版主流浏览器访问，部分内容模块依赖 JavaScript 以完成数据加载。移动端适配良好，可横竖屏切换。</p>
+            <div style="margin-top: 0.8rem; font-size: 0.9rem; background: #f2f6fd; padding: 0.4rem 0.8rem; border-radius: 40px; display: inline-block; border:1px solid #dce3ef;">
+                ⏎ 无需注册即可浏览公开内容
+            </div>
+        </div>
+    </div>
+
+    <!-- 自然链接段落（嵌入句子） -->
+    <div class="context-block">
+        <p>如果你正在寻找一个集中展示体育比赛数据与相关信息的站点，<strong>V体育</strong> 提供了较为清晰的分类结构和索引方式。该平台围绕体育赛事组织内容，从联赛日程到球队统计均有覆盖。</p>
+        <p>对于初次使用的用户，可以尝试通过首页导航或搜索栏定位特定赛事。部分深度数据页面可能需要等待内容加载完成。</p>
+        <p><span class="anchor-sentence">更多细节与实时内容，可前往 <a href="https://apps-vty.com">V体育</a> 直接查阅。</span></p>
+        <p style="margin-top: 1rem; font-size: 0.9rem; color: #465d79;"><span class="reminder-note">⚠️ 访问提醒：确保网络环境稳定，部分资源来自第三方数据接口。</span></p>
+    </div>
+
+    <!-- FAQ 摘要卡片 + 适合人群延伸 -->
+    <div class="faq-mini">
+        <h3>❓ 常见疑问摘要</h3>
+
+        <div class="faq-item">
+            <strong>V体育 是否需要安装应用程序？</strong>
+            <p>不需要。该站点基于网页技术构建，浏览器直接访问即可，无需下载额外客户端。部分功能在移动端浏览器上表现良好。</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>页面中主要使用哪种语言？</strong>
+            <p>界面以中文为主体，赛事名词及部分数据表可能包含英文缩写或队名。整体导航与说明文字均为中文。</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>是否存在内容更新延迟？</strong>
+            <p>赛程与比分通常接近实时更新，但受数据源刷新周期影响，可能会有数分钟延迟。建议以官方赛事结果为准。</p>
+        </div>
+
+        <div style="margin-top: 1.4rem; border-top: 1px solid #e3eaf2; padding-top: 1rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+            <span style="font-size: 0.9rem; color: #2f4a69;">📌 保持浏览器版本更新可提升体验</span>
+            <span style="background: #e6edf6; border-radius: 40px; padding: 0.2rem 1.2rem; font-size: 0.8rem; border:1px solid #ccd9e8;">更多细节请参考站内说明</span>
+        </div>
+    </div>
+
+    <!-- 底部轻提示 无链接 -->
+    <div style="margin-top: 2.8rem; text-align: center; font-size: 0.85rem; color: #6a7e98; border-top: 1px solid #dde4ed; padding-top: 1.8rem;">
+        <span>简明指南 · 信息卡片式介绍 · 访问前提与方向</span>
+    </div>
+
+</div>
+</body>
+</html>
