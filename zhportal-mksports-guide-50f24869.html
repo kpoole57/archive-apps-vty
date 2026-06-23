@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MK体育 · 站点介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fafbfc;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #1f2a3e;
+            line-height: 1.65;
+            padding: 2rem 1.5rem;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.03);
+            padding: 3rem 2.5rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 550;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.35rem;
+            color: #0c1b33;
+        }
+
+        .subhead {
+            font-size: 1rem;
+            color: #5b6f8c;
+            font-weight: 400;
+            margin-bottom: 2.2rem;
+            border-bottom: 1px solid #eef2f6;
+            padding-bottom: 1.2rem;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            font-weight: 550;
+            margin-top: 2.2rem;
+            margin-bottom: 0.6rem;
+            color: #14273e;
+            letter-spacing: -0.01em;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            color: #2c3f57;
+        }
+
+        .highlight-box {
+            background: #f6f9fc;
+            border-left: 4px solid #1e3c5a;
+            padding: 1.2rem 1.5rem;
+            border-radius: 8px;
+            margin: 1.8rem 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0.45rem;
+            font-size: 0.95rem;
+        }
+
+        .highlight-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 1.5rem 0 0.8rem 0;
+        }
+
+        .feature-item {
+            background: #f8fafd;
+            padding: 1rem 1.2rem;
+            border-radius: 14px;
+            border: 1px solid #e9edf3;
+            transition: box-shadow 0.15s;
+        }
+
+        .feature-item strong {
+            display: block;
+            font-weight: 550;
+            font-size: 0.95rem;
+            color: #0a1c30;
+            margin-bottom: 0.2rem;
+        }
+
+        .feature-item span {
+            font-size: 0.88rem;
+            color: #4a607b;
+            line-height: 1.5;
+        }
+
+        .use-case {
+            background: #ffffff;
+            border: 1px solid #e2e9f0;
+            padding: 1.2rem 1.5rem;
+            border-radius: 16px;
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        .use-case ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .use-case li {
+            font-size: 0.93rem;
+            color: #1f344b;
+            padding: 0.35rem 0;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+
+        .use-case li::before {
+            content: "·";
+            position: absolute;
+            left: 0;
+            color: #1e3c5a;
+            font-weight: 600;
+        }
+
+        .faq-mini {
+            margin-top: 2rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #e7edf4;
+        }
+
+        .faq-mini details {
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-mini summary {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: #1f354e;
+            cursor: pointer;
+            padding: 0.3rem 0;
+            transition: color 0.1s;
+        }
+
+        .faq-mini summary:hover {
+            color: #0d2b48;
+        }
+
+        .faq-mini details p {
+            margin: 0.5rem 0 0.8rem 0.8rem;
+            font-size: 0.9rem;
+            color: #405b78;
+            line-height: 1.6;
+        }
+
+        .link-sentence {
+            background: #f2f6fb;
+            padding: 0.9rem 1.4rem;
+            border-radius: 12px;
+            margin: 1.8rem 0 0.5rem 0;
+            font-size: 0.95rem;
+            color: #1d2f45;
+        }
+
+        .link-sentence a {
+            color: #1a3d5e;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid #b3c9de;
+        }
+
+        .link-sentence a:hover {
+            border-bottom-color: #1a3d5e;
+        }
+
+        .footnote {
+            font-size: 0.8rem;
+            color: #7389a4;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e9eff5;
+            text-align: left;
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                padding: 1.8rem 1.2rem;
+            }
+
+            h1 {
+                font-size: 1.65rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 0.9rem;
+            }
+
+            .highlight-box {
+                padding: 1rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>MK体育 · 站点介绍</h1>
+    <div class="subhead">内容聚合平台 · 面向体育资讯与赛事信息</div>
+
+    <p>
+        <a href="https://zhportal-mksports.com" style="color:#1a3d5e; text-decoration:none; font-weight:500; border-bottom:1px solid #b3c9de;">MK体育</a> 是一个以中文内容为主的体育信息入口，聚合赛事动态、队伍数据与深度观察。平台聚焦于多品类体育项目，为浏览者提供结构化的信息呈现，便于快速了解赛事进展与运动趋势。
+    </p>
+
+    <div class="highlight-box">
+        <p><strong>站点属性</strong> · 信息参考与浏览平台，内容来源于公开赛事数据及编译整理。不涉及任何博彩、投注或即时赔率引导，所有展示以体育资讯为主体。</p>
+        <p><strong>内容方向</strong> · 涵盖足球、篮球、网球及新兴运动，以摘要、数据表、赛程预览等形式呈现，方便不同关注侧重的浏览者各取所需。</p>
+    </div>
+
+    <h2>内容亮点</h2>
+    <div class="feature-grid">
+        <div class="feature-item">
+            <strong>多赛事覆盖</strong>
+            <span>主流联赛及国际赛事信息聚合，提供结构化赛程与积分概览。</span>
+        </div>
+        <div class="feature-item">
+            <strong>数据辅助阅读</strong>
+            <span>关键比赛数据、历史对阵记录以简明方式呈现，降低信息筛选成本。</span>
+        </div>
+        <div class="feature-item">
+            <strong>中文语境优先</strong>
+            <span>以中文编译及整理为主，降低语言门槛，提升本地阅读效率。</span>
+        </div>
+        <div class="feature-item">
+            <strong>定期内容更新</strong>
+            <span>根据赛事节奏保持内容迭代，重点关注重大杯赛与赛季节点。</span>
+        </div>
+    </div>
+
+    <h2>使用建议</h2>
+    <div class="use-case">
+        <ul>
+            <li>日常浏览赛事日程与近期比分，快速获取概览信息。</li>
+            <li>查阅特定联赛或球队的背景数据与交锋记录。</li>
+            <li>通过分类索引探索不同运动项目的内容集合。</li>
+            <li>适合体育爱好者、赛事分析者以及信息整合需求者。</li>
+        </ul>
+    </div>
+
+    <h2>可信说明</h2>
+    <p>
+        <a href="https://zhportal-mksports.com" style="color:#1a3d5e; font-weight:500; border-bottom:1px solid #b3c9de; text-decoration:none;">MK体育</a> 所呈现的内容均基于可查证的公开赛事数据与信息编译，平台本身不提供实时赔率、博彩接口或任何形式的金钱交易引导。所有页面标题、数据分类与描述均以体育信息展示为唯一目的。浏览者在使用过程中如发现信息出入，建议参考相关官方赛事组织发布的数据进行交叉核对。
+    </p>
+    <p>
+        站内不包含用户注册、个人账户、充值或虚拟资产功能，亦不收集浏览者的个人身份信息（常规网站访问日志除外）。内容更新频率与深度视赛事季节与编辑整理进度而定，不构成对信息完整性的绝对承诺。
+    </p>
+
+    <div class="faq-mini">
+        <details>
+            <summary>内容更新频率如何？</summary>
+            <p>围绕主流赛程节奏进行更新，重点赛事期间增加内容密度；休赛期以回顾与分析性内容为主。</p>
+        </details>
+        <details>
+            <summary>是否支持移动端浏览？</summary>
+            <p>站点采用响应式布局，在手机及平板设备上均可获得基本可读的排版与导航体验。</p>
+        </details>
+        <details>
+            <summary>信息出现误差怎么办？</summary>
+            <p>体育数据具有动态性，建议以官方赛事数据为最终参考。如发现明显错误，可通过站点渠道反馈（若提供）。</p>
+        </details>
+    </div>
+
+    <div class="link-sentence">
+        若你希望了解更完整的赛事信息与内容分类，可直接浏览 <a href="https://zhportal-mksports.com">MK体育</a> 首页，获取当前赛季的最新整合内容。
+    </div>
+
+    <div class="footnote">
+        MK体育 · 中文体育信息聚合 · 数据来源为公开赛事记录与编译整理
+    </div>
+</div>
+</body>
+</html>
